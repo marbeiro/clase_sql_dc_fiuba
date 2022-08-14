@@ -4,11 +4,13 @@ En este repositorio se encuentran los dos conjuntos de datos utilizados en la cl
 
 ## 1 - SQL dumps
 
-Los dos archivos acá presentes son lo que se denomina un *SQL dump*: un conjunto de líneas en lenguaje SQL que al ser ejecutadas de una sola pasada en el gestor de base de datos (en este caso, PostgreSQL) permiten crear una nueva base de datos, crear las tablas dentro de ella, y cargar los datos en las tablas. Los SQL dumps se usan para hacer copias de seguridad (backups) y recargas (restores) de la base de datos, además de migrarla de un servidor a otro.
+Un *SQL dump* es un conjunto de líneas en lenguaje SQL que al ser ejecutadas de una sola pasada en el gestor de base de datos (en este caso, PostgreSQL) permiten crear una nueva base de datos, crear las tablas dentro de ella, y cargar los datos en las tablas. Los SQL dumps se usan para hacer copias de seguridad (backups) y recargas (restores) de la base de datos, además de migrarla de un servidor a otro.
 
 El lenguaje SQL es estándar, lo cual quiere decir que cualquier gestor de bases de datos de tipo relacional utilizará el mismo lenguaje para interactuar con los datos, con lo que estos dos dumps podrían también ser cargados en cualquier otro gestor de bases de datos relacional (ej., SQL Server, Oracle, MySQL, ...) 
 
-Sin embargo, a veces los gestores extienden el lenguaje con nuevas funcionalidades que pueden no ser reconocidas por otros gestores. Adicionalmente, es común que los gestores de bases de datos generen versiones comprimidas de los dumps con un formato propio. Estos dos motivos hacen que en general no sea inmediato migrar bases de datos de un gestor a otro. En nuestro caso, para evitar estos problemas y también por cuestiones didácticas, hemos generado dumps en formato 'plano' (se pueden leer con cualquier editor de textos) y con instrucciones 100% estándar del lenguaje. Estos dumps deberían funcionar tanto en PostgreSQL como en cualquier otro gestor de bases de datos relacional.
+Sin embargo, a veces los gestores extienden el lenguaje con nuevas funcionalidades que pueden no ser reconocidas por otros gestores. Adicionalmente, es común que los gestores de bases de datos generen versiones comprimidas de los dumps con un formato propio. Estos dos motivos hacen que en general no sea inmediato migrar bases de datos de un gestor a otro. En nuestro caso, para evitar estos problemas y también por cuestiones didácticas, para el primer conjunto de datos que usaremos generamos un dump en formato 'plano' (es decir, se puede leer con cualquier editor de textos) y con instrucciones 100% estándar del lenguaje. Este dump debería funcionar tanto en PostgreSQL como en cualquier otro gestor de bases de datos relacional.
+
+Para nuestro segundo conjunto de datos, en vez de ofrecer un SQL dump, tenemos un pequeño script en SQL que al ser ejecutado crea las tablas, y luego los datos se copian desde archivos CSV. El script y los CSVs se encuentran dentro de un único archivo comprimido .tar.gz.
 
 ## 2 - Instalación de PostgreSQL
 
@@ -40,7 +42,7 @@ Atención porque no siempre PostgreSQL permite por defecto cualquier tipo de con
 
 ## 3 - Datos
 
-Ahora sí, detallamos los dos dumps aquí presentes:
+Ahora sí, detallamos los dos conjuntos de datos que vamos a utilizar:
 
 - `base_fiuba.sql`: Contiene el SQL dump de la base de datos de ejemplo FIUBA, que es un pequeño conjunto ficticio de datos de alumnos, materias y notas de la carrera de Ingeniería Informática en FIUBA. Para cargar este SQL dump en la instalación local de PostgreSQL se debe ejecutar el siguiente comando con el usuario `postgres` del sistema operativo:
 
@@ -48,7 +50,7 @@ Ahora sí, detallamos los dos dumps aquí presentes:
 
 Como este dump es pequeño, también puede ser cargado en el sitio https://www.db-fiddle.com/, que permite hacer pruebas de consultas SQL sobre pequeños conjuntos de datos sin tener que instalar el gestor, y que soporta varios gestores. 
 
-- `base2.sql`: Contiene...
+- `base_libros.tar.gz`: Contiene una base de datos con calificaciones de libros construída a partir de *USCD Book Graph* (https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/home). Debido al tamaño de la base (~470MB), en vez de ofrecer un SQL dump, los datos de las tablas están en archivos CSV, y la carga a PostgreSQL se realiza mediante un script que crea las tablas y copia los datos de esos CSVs dentro de ellas.
 
 
 ### Bibliografía
