@@ -7,7 +7,7 @@ CREATE TABLE materias (
         (codigo)
 );
 
-INSERT INTO MATERIAS (codigo, nombre) VALUES
+INSERT INTO materias (codigo, nombre) VALUES
     (6109, 'Probabilidad y Estadística B') ,
     (6670, 'Estructura del Computador') ,
     (7114, 'Modelos y Optimización I') ,
@@ -27,7 +27,7 @@ CREATE TABLE alumnos (
     CONSTRAINT pk_alumnos PRIMARY KEY (padron)
 );
 
-INSERT INTO ALUMNOS (padron, nombre, apellido, intercambio, fecha_ingreso) VALUES
+INSERT INTO alumnos (padron, nombre, apellido, intercambio, fecha_ingreso) VALUES
     (91000,'Daniel','Molina',false,'2016-03-01') ,
     (92000,'Paula','Pérez Alonso',false,'2017-08-02') ,
     (93000,'José Agustín','Molina',true,'2018-03-07') ,
@@ -53,7 +53,7 @@ CREATE TABLE notas(
         ON UPDATE RESTRICT ON DELETE RESTRICT
 );
 
-INSERT INTO NOTAS (padron_alumno, codigo_materia, nota, fecha) VALUES
+INSERT INTO notas (padron_alumno, codigo_materia, nota, fecha) VALUES
     (93000, 7114, 5, '2019-12-09'), 
     (93000, 7115, 9, '2021-07-07'), 
     (93000, 6109, 9, '2017-05-15'), 
