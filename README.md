@@ -40,7 +40,18 @@ En cualquiera de estos casos, no sólo podremos conectarnos a una base de datos 
 
 Atención porque no siempre PostgreSQL permite por defecto cualquier tipo de conexión. Cuando lo instalamos en Ubuntu por ejemplo, es posible que nos permita conectarnos con el usuario `postgres` del sistema operativo, pero que no nos funcione con la opción -U. Esto es sólo una cuestión de configuración de las reglas de autenticación, que se pueden editar en `etc/postgresql/14/main/pg_hba.conf`.
 
-## 3 - Datos
+## 3 - Carga de Datos
+
+Para cargar los datos de esta clase crearemos una nueva base de datos en PostgreSQL (separada de la que base `postgres` que viene por defecto), a la que llamaremos `clase_sql`:
+
+```
+mariano@localhost:~/$ psql -U postgres
+Contraseña para usuario postgres: ************
+psql (14.3)
+Type "help" for help.
+
+postgres=# CREATE DATABASE clase_sql;
+```
 
 Ahora sí, detallamos los dos conjuntos de datos que vamos a utilizar:
 
@@ -50,7 +61,9 @@ Ahora sí, detallamos los dos conjuntos de datos que vamos a utilizar:
 
 Como este dump es pequeño, también puede ser cargado en el sitio https://www.db-fiddle.com/, que permite hacer pruebas de consultas SQL sobre pequeños conjuntos de datos sin tener que instalar el gestor, y que soporta varios gestores. 
 
-- `base_libros.tar.gz`: Contiene una base de datos con calificaciones de libros construída a partir de *USCD Book Graph* (https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/home). Debido al tamaño de la base (~470MB), en vez de ofrecer un SQL dump, los datos de las tablas están en archivos CSV, y la carga a PostgreSQL se realiza mediante un script que crea las tablas y copia los datos de esos CSVs dentro de ellas. El archivo comprimido no se encuentra en este repositorio, sino que puede descargarse de: http://antiguos.fi.uba.ar/base_libros.tar.gz.
+- `base_libros.tar.gz`: Contiene una base de datos con calificaciones de libros construída a partir de *USCD Book Graph* (https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/home). Debido al tamaño de la base (~470MB), en vez de ofrecer un SQL dump, los datos de las tablas están en archivos CSV, y la carga a PostgreSQL se realiza mediante un script que crea las tablas y copia los datos de esos CSVs dentro de ellas. El archivo comprimido no se encuentra en este repositorio, sino que puede descargarse de: http://antiguos.fi.uba.ar/base_libros.tar.gz. Luego de descomprimir ese archivo y de editar el PATH en que nos encontramos dentro del archivo `base_libros/comandos_creacion.sql`, ejecutaremos:
+
+`psql clase_sql < base_libros/comandos_creacion.sql`
 
 
 ### Bibliografía
