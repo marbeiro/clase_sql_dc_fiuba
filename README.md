@@ -34,9 +34,9 @@ Contraseña para usuario postgres: ************
 
 - Conectándonos desde otro programa que utiliza una biblioteca específica. Por ejemplo, si desarrollamos en Python podemos utilizar `psycopg`, o desde Go la combinación de `lib/pq` con `database/sql`.
 
-En cualquiera de estos casos, no sólo podremos conectarnos a una base de datos local, sino también a una esté en otro servidor, indicando la dirección IP del servidor.
+En cualquiera de estos casos, no sólo podremos conectarnos a una base de datos local, sino también a una en otro servidor, indicando la dirección IP del mismo.
 
-Atención porque no siempre PostgreSQL permite por defecto cualquier tipo de conexión. Cuando lo instalamos en Ubuntu por ejemplo, es posible que nos permita conectarnos con el usuario `postgres` del sistema operativo, pero que no nos funcione la opción -U. Esto es sólo una cuestión de configuración de las reglas de seguridad, que se pueden editar en `etc/postgresql/14/main/pg_hba.conf`.
+Atención porque no siempre PostgreSQL permite por defecto cualquier tipo de conexión. Cuando lo instalamos en Ubuntu por ejemplo, es posible que nos permita conectarnos con el usuario `postgres` del sistema operativo, pero que no nos funcione con la opción -U. Esto es sólo una cuestión de configuración de las reglas de autenticación, que se pueden editar en `etc/postgresql/14/main/pg_hba.conf`.
 
 ## 3 - Datos
 
