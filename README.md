@@ -1,6 +1,6 @@
 # Clase de introducción a SQL - 18/08/2022 - Departamento de Computación (FIUBA)
 
-En este repositorio se encuentran los dos conjuntos de datos utilizados en la clase. Para comenzar a trabajar con ellos es necesario entender (1) qué es un dump SQL y (2) cómo instalar el gestor PostgreSQL, que es el que utilizaremos en la clase.
+En este repositorio se encuentran las indicaciones para cargar los dos conjuntos de datos utilizados en la clase. Para comenzar a trabajar con ellos es necesario entender (1) qué es un dump SQL y (2) cómo instalar el gestor PostgreSQL, que es el que utilizaremos en la clase.
 
 ## 1 - SQL dumps
 
@@ -50,7 +50,7 @@ Ahora sí, detallamos los dos conjuntos de datos que vamos a utilizar:
 
 Como este dump es pequeño, también puede ser cargado en el sitio https://www.db-fiddle.com/, que permite hacer pruebas de consultas SQL sobre pequeños conjuntos de datos sin tener que instalar el gestor, y que soporta varios gestores. 
 
-- `base_libros.tar.gz`: Contiene una base de datos con calificaciones de libros construída a partir de *USCD Book Graph* (https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/home). Debido al tamaño de la base (~470MB), en vez de ofrecer un SQL dump, los datos de las tablas están en archivos CSV, y la carga a PostgreSQL se realiza mediante un script que crea las tablas y copia los datos de esos CSVs dentro de ellas.
+- `base_libros.tar.gz`: Contiene una base de datos con calificaciones de libros construída a partir de *USCD Book Graph* (https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/home). Debido al tamaño de la base (~470MB), en vez de ofrecer un SQL dump, los datos de las tablas están en archivos CSV, y la carga a PostgreSQL se realiza mediante un script que crea las tablas y copia los datos de esos CSVs dentro de ellas. El archivo comprimido no se encuentra en este repositorio, sino que puede descargarse de: http://antiguos.fi.uba.ar/base_libros.tar.gz.
 
 
 ### Bibliografía
