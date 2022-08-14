@@ -42,13 +42,13 @@ Atención porque no siempre PostgreSQL permite por defecto cualquier tipo de con
 
 Ahora sí, detallamos los dos dumps aquí presentes:
 
-`base_fiuba.sql`: Contiene el SQL dump de la base de datos de ejemplo FIUBA, que es un pequeño conjunto ficticio de datos de alumnos, materias y notas de la carrera de Ingeniería Informática en FIUBA. Para cargar este SQL dump en la instalación local de PostgreSQL se debe ejecutar el siguiente comando con el usuario `postgres` del sistema operativo:
+- `base_fiuba.sql`: Contiene el SQL dump de la base de datos de ejemplo FIUBA, que es un pequeño conjunto ficticio de datos de alumnos, materias y notas de la carrera de Ingeniería Informática en FIUBA. Para cargar este SQL dump en la instalación local de PostgreSQL se debe ejecutar el siguiente comando con el usuario `postgres` del sistema operativo:
 
 `psql clase_sql < base_fiuba.sql`
 
 Como este dump es pequeño, también puede ser cargado en el sitio https://www.db-fiddle.com/, que permite hacer pruebas de consultas SQL sobre pequeños conjuntos de datos sin tener que instalar el gestor, y que soporta varios gestores. 
 
-`base_twitter`: Contiene...
+- `base2.sql`: Contiene...
 
 
 ### Bibliografía
